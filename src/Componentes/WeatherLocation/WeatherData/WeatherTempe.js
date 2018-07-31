@@ -5,7 +5,7 @@ import {CLOUD,
     CLOUDY, SUN,
     RAIN, SNOW,
     WINDY} from './../../../constantes/weather';
-
+import './styles.css';
 const stateToiconName = (estado) => {
   switch (estado) {
     case CLOUD:
@@ -26,12 +26,13 @@ const stateToiconName = (estado) => {
 }
 
 const getWeatherIcon = (estado) =>{
-  return   (<WeatherIcons name={stateToiconName(estado)} size="2x"/>);
+  return   (<WeatherIcons className='wIcon' name={stateToiconName(estado)} size="4x"/>);
 }
 const WeatherTempe = ({temperatura, estado}) => (
-  <div>
+  <div className= 'weatherTempeCont'>
     {getWeatherIcon(estado)}
-    <span>{`${temperatura} °C`}</span>
+    <span className = 'temperatura'>{`${temperatura} `}</span>
+    <span className= 'medidaTempe' >°C</span>
   </div>
 );
 
