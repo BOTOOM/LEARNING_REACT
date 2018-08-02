@@ -13,7 +13,7 @@ return (<div className = 'LocationCont'>
 };
 
 Location.propTypes ={
-  Location : PropTypes.string.isRequired,
+  city : PropTypes.string.isRequired,
 };
 
 export default Location;
