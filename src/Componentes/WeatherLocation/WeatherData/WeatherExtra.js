@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const WeatherExtra = ({humedad, viento}) => (
+const WeatherExtra = ({humidity, wind}) => (
   <div className = 'weatherExtraCont'>
-    <span className = 'extraText'>{`Humedad: ${humedad} %`} </span>
-    <span className = 'extraText'> {`Vientos: ${viento} `}</span>
+    <span className = 'extraText'>{`humedad: ${humidity} %`} </span>
+    <span className = 'extraText'> {`Vientos: ${wind} `}</span>
   </div>
 );
 
 WeatherExtra.propTypes = {
-  humedad: PropTypes.number.isRequired,
-  viento: PropTypes.string.isRequired,
+  humidity: PropTypes.number.isRequired,
+  wind: PropTypes.string.isRequired,
 };
 
 export default WeatherExtra;

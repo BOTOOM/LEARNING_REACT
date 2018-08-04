@@ -1,24 +1,21 @@
 import React, { Component} from 'react';
 import Location from './Location';
 import WeatherData from './WeatherData';
-import {CLOUDY, RAIN,
+import {CLOUDY,
     /*CLOUD, SUN,
-    SNOW,
+    SNOW, RAIN,
     WINDY*/} from './../../constantes/weather';
 import './styles.css';
 
-const data1 = {
-  temperatura: 20,
-  estado: CLOUDY,
-  humedad: 10,
-  viento: '10 m/s',
-};
+const location ="Bogota, CO";
+const api_key = "e3b4631cea0510d6eb068127ffbc6c84";
+const api_weather = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;
 
-const data2 = {
-  temperatura: 18,
-  estado: RAIN,
-  humedad: 22,
-  viento: '19 m/s',
+const data1 = {
+  temperature: 20,
+  weatherState: CLOUDY,
+  humidity: 10,
+  wind: '10 m/s',
 };
 
 class WeatherLocation extends Component{
@@ -27,13 +24,37 @@ class WeatherLocation extends Component{
       super();
       this.state = {
         data: data1,
-        city: 'Buenos Aires',
+        city: 'Bogotá',
       };
     }
 
+    getWeatherState = (weather) => {
+      return CLOUDY;
+    }
+
+    getData = (weather_data) =>{
+      const {humidity , temp } = weather_data.main;
+      const {speed} = weather_data.wind;
+      const weatherState  = this.getWeatherState(this.weather);
+
+      const data ={
+        humidity,
+        temperature: temp,
+        weatherState,
+        wind: `${speed} m/s`,
+      }
+
+      return data;
+    }
+
     handleUpdateClick = () =>{
-      this.setState({
-        data: data2,
+      fetch(api_weather).then( data => {
+      //  console.log(data);
+        return data.json();
+      }).then( weather_data => {
+        const data = this.getData(weather_data);
+        this.setState({ data })
+      //  console.log(weather_data);
       });
       console.log("actualizar");
     }

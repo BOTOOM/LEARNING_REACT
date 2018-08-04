@@ -6,20 +6,20 @@ import WeatherExtra from './WeatherExtra';
 import './styles.css'
 
 const WeatherData = ({data}) => {
-  const {temperatura, estado, humedad, viento} = data;
+  const {temperature, weatherState, humidity, wind} = data;
   return (
   <div className ='weatherDataCont' >
-    <WeatherTempe temperatura={temperatura} estado={estado} />
-    <WeatherExtra humedad={humedad} viento={viento} />
+    <WeatherTempe temperature={temperature} weatherState={weatherState} />
+    <WeatherExtra humidity={humidity} wind={wind} />
   </div>);
 };
 
 WeatherData.propTypes = {
   data: PropTypes.shape({
-      temperatura: PropTypes.number.isRequired,
-      estado: PropTypes.string.isRequired,
-      humedad : PropTypes.number.isRequired,
-      viento: PropTypes.string.isRequired,
+      temperature: PropTypes.number.isRequired,
+      weatherState: PropTypes.string.isRequired,
+      humidity : PropTypes.number.isRequired,
+      wind: PropTypes.string.isRequired,
   }),
 };
 
