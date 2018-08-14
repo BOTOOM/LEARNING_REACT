@@ -67,9 +67,8 @@ class WeatherLocation extends Component{
       const { city , data } = this.state;
       return(
         <div className= 'weatherLocationCont'>
-          <Location city={city}/>
-          <WeatherData data={data} />
-          <button onClick={this.handleUpdateClick}>Actualizar </button>
+        <Location city={city}/>
+        {data ? <WeatherData data={data} /> : "Cargando..."}
         </div>
       );
     };
