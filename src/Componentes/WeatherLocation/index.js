@@ -5,33 +5,23 @@ import WeatherData from './WeatherData';
 import transformWeather from './../../services/transformWeather'
 import './styles.css';
 
-import {CLOUDY,
-    /*CLOUD, SUN,
-    SNOW, RAIN,
-    WINDY*/} from './../../constantes/weather';
 
 
 const location ="Bogota, CO";
 const api_key = "e3b4631cea0510d6eb068127ffbc6c84";
 const api_weather = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;
 
-const data1 = {
-  temperature: 20,
-  weatherState: CLOUDY,
-  humidity: 10,
-  wind: '10 m/s',
-};
 
 class WeatherLocation extends Component{
 
-    constructor() {
-      super();
-      this.state = {
-        data: data1,
-        city: 'Bogotá',
-      };
-      console.log("constructor");
-    }
+  constructor() {
+    super();
+    this.state = {
+      data: null,
+      city: 'Bogotá',
+    };
+    console.log("constructor");
+  }
 
 
 
