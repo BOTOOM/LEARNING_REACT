@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import WeatherLocation from './Componentes/WeatherLocation'
+import LocationList from './Componentes/LocationList'
 import './App.css';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div className="App">
-          <WeatherLocation></WeatherLocation>
+          <LocationList></LocationList>
         </div>
       </MuiThemeProvider>
     );
