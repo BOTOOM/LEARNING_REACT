@@ -15,18 +15,17 @@ const url = "http://api.openweathermap.org/data/2.5/weather";
 
 class WeatherLocation extends Component{
 
-  constructor( { city} ) {
+  constructor( { city } ) {
     super();
     this.state = {
+      city,
       data: null,
-      city: 'Bogotá',
     };
-    console.log("constructor");
   }
 
 
     componentWillMount() {
-      const { city } = this.state.city;
+      const { city } = this.state;
       const api_weather = `${url}?q=${city}&appid=${api_key}`;
       fetch(api_weather).then( data => {
         return data.json();
