@@ -10,7 +10,7 @@ import './styles.css';
 
 //const city ="Bogota, CO";
 const api_key = "e3b4631cea0510d6eb068127ffbc6c84";
-const url = "http://api.openweathermap.org/data/2.5/weather";
+const url = "https://api.openweathermap.org/data/2.5/weather";
 
 
 class WeatherLocation extends Component{
