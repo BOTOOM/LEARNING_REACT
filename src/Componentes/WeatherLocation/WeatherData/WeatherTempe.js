@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import {CLOUD,
     CLOUDY, SUN,
     RAIN, SNOW,
-    WINDY} from './../../../constantes/weather';
+    WINDY, THUNDER,
+    DRIZZLE} from './../../../constantes/weather';
 import './styles.css';
 const stateToiconName = (weatherState) => {
   switch (weatherState) {
@@ -20,6 +21,10 @@ const stateToiconName = (weatherState) => {
       return   "snow";
     case WINDY:
       return   "windy";
+    case THUNDER:
+      return "day-thunderstorm";
+    case DRIZZLE:
+      return "day-showers"
     default:
       return "day-sunny";
   }
