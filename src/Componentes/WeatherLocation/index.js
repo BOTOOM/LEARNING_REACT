@@ -48,7 +48,6 @@ class WeatherLocation extends Component{
     }
 */
     render = () => {
-      console.log("render");
       const { city , data } = this.state;
       return(
         <div className= 'weatherLocationCont'>
