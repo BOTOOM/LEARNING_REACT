@@ -12,11 +12,16 @@ const cities = [
   'Santiago, CL',
 ];
 class App extends Component {
+  handleSelectedLocation = city => {
+    console.log(`handleSelectedLocation ${city}`);
+  }
   render() {
     return (
+
       <MuiThemeProvider>
         <div className="App">
-          <LocationList cities= {cities} ></LocationList>
+          <LocationList cities= {cities}
+          onSelectedLocation= {this.handleSelectedLocation} ></LocationList>
         </div>
       </MuiThemeProvider>
     );
