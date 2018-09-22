@@ -22,14 +22,17 @@ class App extends Component {
       <MuiThemeProvider>
         <Grid fluid>
           <Row>
-            <Col xs={12} sm={6} md={4} >
+            <Col xs={12} sm={6} md={4} lg={3}>
               <div className='red'> </div>
             </Col>
-            <Col xs={12} sm={6} md={4} >
+            <Col xs={12} sm={6} md={4} lg={3}>
               <div className='green'> </div>
             </Col>
-            <Col xs={12} sm={6} md={4} >
+            <Col xs={12} sm={6} md={4} lg={3}>
               <div className='blue'> </div>
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <div className='yellow'> </div>
             </Col>
           </Row>
         </Grid>
