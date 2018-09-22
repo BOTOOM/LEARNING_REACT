@@ -1,49 +1,39 @@
 import React, { Component } from 'react';
 import {Grid, Row, Col} from 'react-flexbox-grid';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-//import LocationList from './Componentes/LocationList'
+import LocationList from './Componentes/LocationList'
 import './App.css';
 
-/*const cities = [
+const cities = [
   'Bogota, COL',
   'Buenos Aires, AR',
   'Washington DC., US',
   'Mexico, MX',
   'Madrid, ES',
   'Santiago, CL',
-];*/
+];
 class App extends Component {
   handleSelectedLocation = city => {
     console.log(`handleSelectedLocation ${city}`);
   }
   render() {
     return (
-
-      <MuiThemeProvider>
-        <Grid fluid>
+        <Grid>
           <Row>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='red'> </div>
+            Titulo
+          </Row>
+          <Row>
+            <Col xs={12} md={6}>
+            <LocationList
+              cities= {cities}
+              onSelectedLocation= {this.handleSelectedLocation} >
+            </LocationList>
             </Col>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='green'> </div>
-            </Col>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='blue'> </div>
-            </Col>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='yellow'> </div>
+            <Col xs={12} md={6}>
+              <div className="detaiils">
+              </div>
             </Col>
           </Row>
         </Grid>
-
-
-
-        {/*<div className="App">
-          <LocationList cities= {cities}
-          onSelectedLocation= {this.handleSelectedLocation} ></LocationList>
-        </div>*/}
-      </MuiThemeProvider>
     );
   }
 }
