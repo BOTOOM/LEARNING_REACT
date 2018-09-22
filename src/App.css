@@ -26,3 +26,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.red {
+  background: red;
+  height: 100px;
+  min-width: 50px;
+}
+.green {
+  background: green;
+  height: 100px;
+  min-width: 50px;
+}
+.blue {
+  background: blue;
+  height: 100px;
+  min-width: 50px;
+}
