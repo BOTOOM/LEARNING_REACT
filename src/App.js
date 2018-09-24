@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 import LocationList from './Componentes/LocationList'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 
 const cities = [
@@ -17,7 +18,8 @@ class App extends Component {
   }
   render() {
     return (
-        <Grid>
+      <MuiThemeProvider>
+        <Grid fluid>
           <Row>
             Titulo
           </Row>
@@ -34,6 +36,7 @@ class App extends Component {
             </Col>
           </Row>
         </Grid>
+    </MuiThemeProvider>
     );
   }
 }
