@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 import LocationList from './Componentes/LocationList'
 import './App.css';
@@ -38,8 +39,10 @@ class App extends Component {
             </LocationList>
             </Col>
             <Col xs={12} md={6}>
-              <div className="detaiils">
-              </div>
+              <Paper elevation={4}>
+                <div className="detaiils">
+                </div>
+              </Paper>
             </Col>
           </Row>
         </Grid>
